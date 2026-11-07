@@ -1,0 +1,9 @@
+Threshold: 0.0833
+Injected anomalous hours: 60
+Anomalous windows: 1339 of 6895
+Precision: 0.892
+Recall:    0.087
+F1-score:  0.158
+Confusion matrix [[TN, FP], [FN, TP]]:
+[[5542   14]
+ [1223  116]]

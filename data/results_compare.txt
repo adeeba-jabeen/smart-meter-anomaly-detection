@@ -1,0 +1,10 @@
+Anomalous windows: 1339 of 6895
+
+mean error  | percentile 99 | thr=0.0833 | P=0.892 R=0.087 F1=0.158 | flagged=130
+mean error  | percentile 97 | thr=0.0740 | P=0.818 R=0.188 F1=0.306 | flagged=308
+mean error  | percentile 95 | thr=0.0690 | P=0.804 R=0.267 F1=0.401 | flagged=445
+mean error  | percentile 90 | thr=0.0616 | P=0.736 R=0.395 F1=0.514 | flagged=719
+max error   | percentile 99 | thr=0.3427 | P=0.952 R=0.448 F1=0.609 | flagged=630
+max error   | percentile 97 | thr=0.3001 | P=0.891 R=0.503 F1=0.643 | flagged=755
+max error   | percentile 95 | thr=0.2771 | P=0.853 R=0.512 F1=0.640 | flagged=804
+max error   | percentile 90 | thr=0.2425 | P=0.741 R=0.533 F1=0.620 | flagged=964
