@@ -41,7 +41,7 @@ Change the threshold multiplier select a date range or upload your own CSV file 
 
 ## Full report
 
-[Read the project report (PDF)](report/ANN%20project%20report.pdf)
+[Download the project report (PDF)](https://github.com/adeeba-jabeen/smart-meter-anomaly-detection/raw/main/report/ANN%20project%20report.pdf)
 
 ## Run
 
