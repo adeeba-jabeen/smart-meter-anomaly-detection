@@ -24,7 +24,7 @@ def scores(X):
     return abs_err.mean(axis=1), abs_err.max(axis=1)
 
 
-# 1. Inject artificial anomalies (same as before: 30 spikes, 30 zero drops)
+# 1. Inject 30 spikes and 30 zero drops as artificial anomalies
 idx = rng.choice(np.arange(WINDOW, n - WINDOW), size=60, replace=False)
 corrupted = test_raw.copy()
 corrupted[idx[:30]] += rng.uniform(3, 6, size=30)
@@ -64,7 +64,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 
-PCT = 95  # sab models ke liye same percentile, taake comparison fair ho
+PCT = 95  # same percentile for all models so the comparison is fair
 
 
 def evaluate(name, tr_score, te_score):
@@ -79,13 +79,13 @@ def evaluate(name, tr_score, te_score):
     }
 
 
-# 1) Z-score baseline: har window ka sabse bada z-score
+# 1) Z-score baseline: largest z-score in each window
 mu = X_train[:, :, 0].mean()
 sd = X_train[:, :, 0].std()
 z_train = (np.abs(X_train[:, :, 0] - mu) / sd).max(axis=1)
 z_test = (np.abs(X_test[:, :, 0] - mu) / sd).max(axis=1)
 
-# 2) Isolation Forest baseline (flattened windows par)
+# 2) Isolation Forest baseline (on flattened windows)
 iso = IsolationForest(n_estimators=100, random_state=42, n_jobs=-1)
 iso.fit(X_train.reshape(len(X_train), -1))
 iso_train = -iso.score_samples(X_train.reshape(len(X_train), -1))
